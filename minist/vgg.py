@@ -1,3 +1,10 @@
+from keras.models import Model, Sequential
+from keras.layers import Dense, Dropout, Activation, Flatten
+from keras.layers.convolutional import (Convolution2D, MaxPooling2D,
+                                        ZeroPadding2D)
+
+from keras.applications.vgg16 import VGG16
+from keras.applications.vgg19 import VGG19
 def build_vgg(img_shape=(3, 224, 224), n_classes=1000, n_layers=16, l2_reg=0.,
                 load_pretrained=False, freeze_layers_from='base_model'):
     # Decide if load pretrained weights from imagenet
